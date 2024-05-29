@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<title>{% block title %}{{ title }}{% endblock %}</title>
+
+{% block content %}
+<!-- Home page content here -->
+<section class="blog-home">
+  <article class="blog-article">
+    {% for post in posts %}     
+      <main class="post-container">
+          <div class="post-info">
+            <h2 class="post-author">{{ post.author }}</h2>
+            <p class="post-date">{{ post.date }}</p>
+          </div>
+          <div class="post-detail">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <p class="post-content">
+            {{ post.content }}
+            </p>
+          </div>
+      </main>
+      {% endfor %}
+  </article>
+
+  <aside class="aside">
+    <h1>Topic</h1>
+    <p>Latest Post</p>
+    <p>Trending Post</p>
+    <p>Tech related Post</p>
+  </aside>
+
+</section>
+{% endblock %}

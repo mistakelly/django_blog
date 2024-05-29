@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}{{ title }}{% endblock %}</title>
+
+{% block content %}
+    <section class="about-page">
+
+        {% for post in all_post %}
+            {{ post.title }}
+            {{ post.content }}
+            {{ post.posted_at }}
+            {{ post.author }}
+        {% endfor %}
+    </section>
+{% endblock content %}

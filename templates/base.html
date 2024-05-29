@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home-page{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:ǓǏǏ"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+    />
+
+    <!-- css -->
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static  'css/styles.css' %}" />
+    {% endblock styles %}
+  </head>
+  <body>
+    <nav class="main-nav">
+      <ul class="menu">
+        <div class="menu-section">
+          <li class="menu-iem"><a href="{% url 'blog-homepage' %}">Django-Blog</a></li>
+          <li class="menu-item"><a href="{% url 'blog-homepage' %}">Home</a></li>
+          <li class="menu-item"><a href="{% url 'blog-aboutpage' %}">About</a></li>
+        </div>
+
+        <div class="user-action">
+          <li class="menu-iem"><a href="#">Login</a></li>
+          <li class="menu-iem"><a href="#">Register</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <section class="container">{% block content %} {% endblock %}</section>
+  </body>
+</html>
